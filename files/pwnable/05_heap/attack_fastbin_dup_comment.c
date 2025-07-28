@@ -17,7 +17,10 @@ int main(void){
 
 	free(ma);
 	free(mb);
-	free(ma);		// vuln
+	// fasbinsは追加チェックのときに
+	// 先頭から入れたいから、先頭と
+	// 入れたいものが同一でなければ問答無用で入れてしまう
+	free(ma);		// vuln vulnerability 脆弱性
 
 	printf("1st calloc : %p\n", calloc(1, 0x18));
 	printf("2nd calloc : %p\n", calloc(1, 0x18));
